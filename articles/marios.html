@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gravité terrestre et anomalies gravitationnelles</title>
+
+  <meta name="description"
+        content="Article de géophysique sur les anomalies gravitationnelles : champ de gravité, intégrales de masse, correction de Bouguer et applications." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body{
+      margin:0;
+      font-family:'Inter',system-ui;
+      background:#0f1724;
+      color:#e6eef6;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      max-width:900px;
+      width:100%;
+    }
+    h1,h2,h3{
+      font-family:'Merriweather',serif;
+    }
+    h1{margin-top:0}
+    p{
+      line-height:1.75;
+      color:#cbd5e1;
+      font-size:1.02rem;
+    }
+    .meta{
+      color:#94a3b8;
+      font-size:0.9rem;
+      margin-bottom:20px;
+    }
+    /* .schema{
+      margin:26px 0;
+      padding:18px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.04);
+      border:1px dashed rgba(255,255,255,0.2);
+      text-align:center;
+      font-weight:700;
+      color:#2dd4bf;
+    } */
+    .equation{
+      margin:18px 0;
+      padding:12px 16px;
+      background:rgba(2,6,23,0.6);
+      border-radius:10px;
+      overflow-x:auto;
+    }
+    a{
+      color:#2dd4bf;
+      text-decoration:none;
+      font-weight:700;
+    }
+    hr{
+      border:0;
+      height:1px;
+      background:rgba(255,255,255,0.08);
+      margin:32px 0;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+<a href="../index.html">← Retour à la page précédente</a>
+
+<h1>Gravité terrestre et anomalies gravitationnelles</h1>
+<div class="meta">
+Gravimétrie · Géophysique fondamentale 
+</div>
+
+<p>
+La gravité terrestre est souvent modélisée comme une accélération constante
+$g \simeq 9{,}81\ \text{m·s}^{-2}$.
+En réalité, des mesures de haute précision montrent que le champ de gravité
+varie légèrement selon la position géographique.
+Ces variations, appelées <strong>anomalies gravitationnelles</strong>,
+constituent un outil majeur pour sonder l’intérieur de la Terre.
+</p>
+
+<hr>
+
+<h2>1. Champ de gravité et répartition de masse</h2>
+
+<p>
+Dans le cadre de la gravitation newtonienne, le champ de gravité $\vec g(M)$
+créé en un point M par une distribution de masse volumique $\rho(P)$ en un point P est donné par
+l’expression intégrale :
+</p>
+
+<div class="equation">
+$$
+\vec g(M) = -G \int\int\int \frac{\rho(P) \vec{u}_{PM}} {||\vec{PM}||^2} 
+\, \mathrm d\tau
+$$
+<!-- $$
+\vec g(\vec r)
+= -G \int_V
+\frac{\rho(\vec r')(\vec r-\vec r')}
+{|\vec r-\vec r'|^3}
+\,\mathrm d\tau
+$$ -->
+</div>
+
+<p>
+où $\rho(P)$ représente la densité locale et $d\tau$ l'élément de volume. Cette expression montre que le champ gravitationnel dépend directement
+de la répartition interne des masses.
+Toute variation locale de densité dans la croûte ou le manteau
+entraîne une modification mesurable de $\vec g$.
+</p>
+
+<!-- <div class="schema">
+Schéma 1 — Contribution d’un volume dense au champ de gravité mesuré
+</div> -->
+
+<hr>
+
+<h2>2. Gravité observée et gravité de référence</h2>
+
+<p>
+En géophysique, on compare la gravité mesurée $g_{\text{obs}}$ à une
+gravité théorique $g_{\text{ref}}$ calculée à partir d’un modèle
+simplifié de la Terre (ellipsoïde homogène en rotation).
+On définit alors l’anomalie gravitationnelle :
+</p>
+
+<div class="equation">
+$$
+\Delta g = g_{\text{obs}} - g_{\text{ref}}
+$$
+</div>
+
+<p>
+Cependant, pour isoler l’effet des structures profondes,
+plusieurs corrections doivent être appliquées.
+</p>
+
+<hr>
+
+<h2>3. Correction à l’air libre</h2>
+
+<p>
+La gravité diminue avec l’altitude du point de mesure.
+Pour une élévation $h$ faible devant le rayon terrestre,
+on obtient une approximation linéaire :
+</p>
+
+<div class="equation">
+$$
+\Delta g_{\text{air libre}}
+\simeq - \frac{2GM}{R^3} h
+\simeq -0{,}3086\, h
+\quad (\text{mGal},\ h \text{ en m})
+$$
+</div>
+
+<p>
+Cette correction ramène la mesure au niveau de référence
+(généralement le niveau de la mer).
+</p>
+
+<hr>
+
+<h2>4. Correction de Bouguer : modèle de la plaque infinie</h2>
+
+<p>
+La masse comprise entre le point de mesure et le niveau de référence
+exerce une attraction gravitationnelle supplémentaire.
+On modélise cette masse par une plaque infinie d’épaisseur $h$
+et de densité $\rho$.
+</p>
+
+<p>
+Le champ gravitationnel créé par une plaque infinie est obtenu
+par intégration des contributions élémentaires :
+</p>
+
+<div class="equation">
+$$
+\Delta g_{\text{Bouguer}}
+= 2\pi G \rho h
+$$
+</div>
+
+<p>
+Cette expression simple résulte de la symétrie du problème
+et constitue l’une des formules fondamentales de la gravimétrie appliquée.
+</p>
+
+<!-- <div class="schema">
+Schéma 2 — Modèle de Bouguer : plaque infinie et point de mesure
+</div> -->
+
+<hr>
+
+<h2>5. Anomalie de Bouguer complète</h2>
+
+<p>
+En combinant les corrections précédentes, on définit
+l’anomalie de Bouguer complète :
+</p>
+
+<div class="equation">
+$$
+\Delta g_B
+= g_{\text{obs}} - g_{\text{ref}}
++ \Delta g_{\text{air libre}}
+- \Delta g_{\text{Bouguer}}
+$$
+</div>
+
+<p>
+Cette grandeur met en évidence les variations de densité du sous-sol,
+indépendamment de la topographie.
+</p>
+
+<hr>
+
+<h2>6. Interprétation géophysique</h2>
+
+<p>
+Une anomalie de Bouguer positive indique un excès de masse
+(roches denses, intrusions magmatiques, socle cristallin),
+tandis qu’une anomalie négative traduit un déficit de masse
+(bassins sédimentaires, chambres magmatiques partiellement fondues).
+</p>
+
+<hr>
+
+<h2>7. Applications</h2>
+
+<p>
+Les anomalies gravitationnelles sont utilisées en exploration géologique,
+volcanologie, tectonique et géophysique globale.
+Elles permettent de sonder la Terre en profondeur
+sans recourir à des méthodes invasives.
+</p>
+
+</div>
+</body>
+</html>
